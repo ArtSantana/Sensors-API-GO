@@ -23,6 +23,7 @@ func main() {
 		fmt.Fprintln(res, "Why are u here?")
 	})
 	router.HandleFunc("/sensors", controller.GetSensors).Methods("GET")
+	router.HandleFunc("/sensors", controller.UpdateSensorTemp).Methods("PATCH")
 
 	log.Println("Server listening on port", port)
 	log.Fatalln(http.ListenAndServe(port, router))

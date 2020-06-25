@@ -12,3 +12,8 @@ type SensorNoID struct {
 	Active         int `json:"active"`
 	MaxTemperature int `json:"max_temperature"`
 }
+
+type UpdateModel struct {
+	ID          int `json:"id"`
+	Temperature int `json:"temperature"`
+}
