@@ -1,19 +1,19 @@
 package models
 
+import (
+	"github.com/jinzhu/gorm"
+)
+
+// Sensor model
 type Sensor struct {
-	ID             int `json:"id"`
-	Temperature    int `json:"temperature"`
-	Active         int `json:"active"`
-	MaxTemperature int `json:"max_temperature"`
+	gorm.Model
+	Temperature    float64
+	Active         bool
+	MaxTemperature float64
 }
 
-type SensorNoID struct {
-	Temperature    int `json:"temperature"`
-	Active         int `json:"active"`
-	MaxTemperature int `json:"max_temperature"`
-}
-
+// UpdateModel model
 type UpdateModel struct {
-	ID          int `json:"id"`
-	Temperature int `json:"temperature"`
+	ID          int
+	Temperature float64
 }

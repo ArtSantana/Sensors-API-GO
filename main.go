@@ -24,6 +24,7 @@ func main() {
 	})
 	router.HandleFunc("/sensors", controller.GetSensors).Methods("GET")
 	router.HandleFunc("/sensors", controller.UpdateSensorTemp).Methods("PATCH")
+	router.HandleFunc("/sensors", controller.CreateSensor).Methods("POST")
 
 	log.Println("Server listening on port", port)
 	log.Fatalln(http.ListenAndServe(port, router))
